@@ -1,0 +1,69 @@
+/* Start with some debugging styles */
+* {
+    border: 1px solid red;
+}
+
+/* General page and tag styles */
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* Specific container styles */
+.container {
+    background-color: white;
+    margin-top: 110px;
+    padding-left: 100px;
+    min-width: 1200px;
+    height: 500px;
+    position: relative;
+    z-index: 1;
+}
+
+.ryu {
+    float: left;
+    width: 659px;
+    height: 494px;
+}
+
+.ryu-ready, .ryu-still, .ryu-throwing  {
+    width: 659px;
+    height: 494px;
+}
+
+.ryu-ready {
+    background-image: url('../images/ryu-ready-position.gif');
+    display: none;
+}
+
+.ryu-still {
+    background-image: url('../images/ryu-standing-still.png');
+    display: none;
+}
+
+.ryu-throwing {
+    background-image: url('../images/ryu-throwing-hadouken.png');
+    display: none;
+}
+
+.hadouken, .ryu-ready, .ryu-still, .ryu-throwing {
+    background-repeat: no-repeat;
+}
+
+.hadouken {
+    float: left;
+    background-image: url('../images/hadouken.gif');
+    width: 156px;
+    height: 90px;
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 165px;
+    left: 535px;
+}
