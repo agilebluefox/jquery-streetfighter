@@ -73,10 +73,9 @@ body {
 }
 
 .text {
-    width: 540px;
+    width: 400px;
     height: 500px;
     float: left;
-    padding-left: 30px;
 }
 
 .instructions {
@@ -85,6 +84,6 @@ body {
 
 .instructions li {
     font-family: 'Shojumaru', cursive;
-    font-size: 2em;
-    padding: .8em;
+    font-size: 1.8em;
+    padding: .6em;
 }
