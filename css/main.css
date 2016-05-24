@@ -1,7 +1,7 @@
 /* Start with some debugging styles */
-* {
+/* * {
     border: 1px solid red;
-}
+} */
 
 /* General page and tag styles */
 html {
@@ -70,4 +70,21 @@ body {
     z-index: 10;
     top: 165px;
     left: 535px;
+}
+
+.text {
+    width: 540px;
+    height: 500px;
+    float: left;
+    padding-left: 30px;
+}
+
+.instructions {
+    list-style: none;
+}
+
+.instructions li {
+    font-family: 'Shojumaru', cursive;
+    font-size: 2em;
+    padding: .8em;
 }
