@@ -24,6 +24,8 @@ body {
     height: 500px;
     position: relative;
     z-index: 1;
+    /* Use this to hide issue with the mouse/keyup event */
+    overflow: hidden;
 }
 
 .ryu {
