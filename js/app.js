@@ -2,6 +2,8 @@ $(document).ready(function() {
     // When the cursor enters the div hide the still image
     // and replace it with the ready gif
     $('.ryu').mouseenter(function() {
+        // Debugging message
+        console.log('The mouse is in the container');
         $('.ryu-still').hide();
         $('.ryu-cool').hide();
         $('.ryu-ready').show();
@@ -9,6 +11,8 @@ $(document).ready(function() {
     // When the cursor leaves the div, repalce the ready gif
     // with the still image
     .mouseleave(function() {
+        // Debugging message
+        console.log('The mouse left the container');
         $('.ryu-ready').hide();
         $('.ryu-still').show();
     })
@@ -19,6 +23,7 @@ $(document).ready(function() {
         // Play the audio clip
         playHadouken();
         $('.ryu-ready').hide();
+        $('.ryu-still').hide();
         $('.ryu-throwing').show();
         // Add the ball of fire and animate it across the screen
         $('.hadouken').finish().show().animate(
@@ -56,9 +61,11 @@ $(document).ready(function() {
             // debugging message
             console.log( "Handler for .keyup() called." );
             $('.ryu-cool').hide();
+            $('.ryu-ready').hide();
+            $('.ryu-throwing').hide();
             $('.ryu-still').show();
         }
-    });
+    })
 });
 
 // Function to play the sound when ryu fires a shot
