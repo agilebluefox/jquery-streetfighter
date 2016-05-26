@@ -1,9 +1,14 @@
 $(document).ready(function() {
+    // Use a variable to keep track of whether or not the mouse has
+    // entered the ryu container div. This will prevent issues with
+    // determining the state of ryu after the keyup event
+    var mouseLocation = 0;
     // When the cursor enters the div hide the still image
     // and replace it with the ready gif
     $('.ryu').mouseenter(function() {
         // Debugging message
         console.log('The mouse is in the container');
+        mouseLocation = 1;
         $('.ryu-still').hide();
         // $('.ryu-cool').hide();
         $('.ryu-ready').show();
@@ -13,6 +18,7 @@ $(document).ready(function() {
     .mouseleave(function() {
         // Debugging message
         console.log('The mouse left the container');
+        mouseLocation = 0;
         $('.ryu-ready').hide();
         $('.ryu-still').show();
     })
@@ -23,10 +29,6 @@ $(document).ready(function() {
         // Play the audio clip
         playHadouken();
         $('.ryu-ready').hide();
-        // I had to hide the ryu-still div and add some additional css
-        // to solve the issue that occured when the keyup event
-        // was followed immediately by a mousedown event
-        $('.ryu-still').hide();
         $('.ryu-throwing').show();
         // Add the ball of fire and animate it across the screen
         $('.hadouken').finish().show().animate(
@@ -53,7 +55,6 @@ $(document).ready(function() {
             // debugging message
             console.log( "Handler for .keydown() called." );
             // Hide the other images and show the "cool" image
-            // $('.ryu-throwing').hide();
             $('.ryu-ready').hide();
             $('.ryu-still').hide();
             $('.ryu-cool').show();
@@ -65,9 +66,11 @@ $(document).ready(function() {
             // debugging message
             console.log( "Handler for .keyup() called." );
             $('.ryu-cool').hide();
-            // $('.ryu-ready').hide();
-            // $('.ryu-throwing').hide();
-            $('.ryu-still').show();
+            if (mouseLocation == 1) {
+                $('.ryu-ready').show();
+            } else {
+                $('.ryu-still').show();
+            }
         }
     })
 });
